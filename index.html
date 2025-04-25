@@ -26,32 +26,19 @@
       background-color: #f8bbd0; /* light pink highlight on hover */
       border-color: #f48fb1;
     }
-    /* Hide the iframe visually but keep it playing */
-    #youtube-audio {
-      position: fixed;
-      bottom: 1rem;
-      right: 1rem;
-      width: 300px;
-      height: 56px;
-      border: none;
-      border-radius: 0.5rem;
-      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-      background: #fce4ec;
-      z-index: 1000;
-    }
   </style>
 </head>
 <body class="bg-gradient-to-r from-pink-300 via-purple-300 to-indigo-400 min-h-screen flex items-center justify-center p-4">
   <div class="max-w-xl w-full bg-pink-50 rounded-xl shadow-lg p-8 text-center">
     <!-- Slide 1: Name -->
     <div id="slide-1" class="slide active">
-      <h1 class="text-2xl font-bold text-pink-700 cursor-pointer hover:text-pink-900" id="name-click">💕HELENA HALIDA CRISTY💕</h1>
+      <h1 class="text-2xl font-bold text-pink-700 cursor-pointer hover:text-pink-900" id="name-click">🎂🎉HAPPY BIRTHDAY🎂🎉</h1>
       <p class="mt-4 text-pink-600 hidden">Klik di nama untuk lanjut</p>
     </div>
 
     <!-- Slide 2: Happy Birthday -->
     <div id="slide-2" class="slide">
-      <h2 class="text-3xl font-extrabold text-pink-600 cursor-pointer hover:text-pink-900" id="happy-birthday-click">🎂🎉HAPPY BIRTHDAY🎂🎉</h2>
+      <h2 class="text-3xl font-extrabold text-pink-600 cursor-pointer hover:text-pink-900" id="happy-birthday-click">💕HELENA HALIDA CRISTY💕</h2>
       <p class="mt-4 text-pink-600 hidden">Klik untuk slide selanjutnya</p>
     </div>
 
@@ -105,8 +92,8 @@
     </div>
   </div>
 
-  <!-- YouTube iframe for sweet song -->
-  <iframe id="youtube-audio" src="https://www.youtube.com/embed/juihwuqstXQ?autoplay=1&loop=1&playlist=juihwuqstXQ&controls=1&mute=1" allow="autoplay" allowfullscreen></iframe>
+  <!-- Audio element for sweet western song -->
+  <audio id="birthday-song" src="https://www.bensound.com/bensound-music/bensound-sunny.mp3" autoplay loop controls class="fixed bottom-4 right-4 w-48 rounded shadow-lg bg-pink-100"></audio>
 
   <script>
     const slides = document.querySelectorAll('.slide');
