@@ -26,6 +26,19 @@
       background-color: #f8bbd0; /* light pink highlight on hover */
       border-color: #f48fb1;
     }
+    /* Hide the iframe visually but keep it playing */
+    #youtube-audio {
+      position: fixed;
+      bottom: 1rem;
+      right: 1rem;
+      width: 300px;
+      height: 56px;
+      border: none;
+      border-radius: 0.5rem;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      background: #fce4ec;
+      z-index: 1000;
+    }
   </style>
 </head>
 <body class="bg-gradient-to-r from-pink-300 via-purple-300 to-indigo-400 min-h-screen flex items-center justify-center p-4">
@@ -92,8 +105,8 @@
     </div>
   </div>
 
-  <!-- Audio element for sweet western song -->
-  <audio id="birthday-song" src="https://www.bensound.com/bensound-music/bensound-sunny.mp3" autoplay loop controls class="fixed bottom-4 right-4 w-48 rounded shadow-lg bg-pink-100"></audio>
+  <!-- YouTube iframe for song about kasih sayang -->
+  <iframe id="youtube-audio" src="https://www.youtube.com/embed/Wx5mMxUPEd8?autoplay=1&loop=1&playlist=Wx5mMxUPEd8&controls=1&mute=1" allow="autoplay" allowfullscreen class="fixed bottom-4 right-4 w-72 h-16 rounded shadow-lg bg-pink-100 border-none"></iframe>
 
   <script>
     const slides = document.querySelectorAll('.slide');
