@@ -1,183 +1,308 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Birthday Greeting for Helena Halida Cristy</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
-  <script src="https://cdn.tailwindcss.com"></script>
-  <style>
-    body {
-      font-family: 'Poppins', sans-serif;
-      background: #fce4ec; /* soft pink background */
-    }
-    .slide {
-      display: none;
-      transition: opacity 0.5s ease-in-out;
-    }
-    .slide.active {
-      display: block;
-    }
-    .gift-option:hover {
-      transform: scale(1.1);
-      transition: transform 0.3s ease;
-      cursor: pointer;
-      background-color: #f8bbd0; /* light pink highlight on hover */
-      border-color: #f48fb1;
-    }
-    /* Hide the iframe visually but keep it playing */
-    #youtube-audio {
-      position: fixed;
-      bottom: 1rem;
-      right: 1rem;
-      width: 300px;
-      height: 56px;
-      border: none;
-      border-radius: 0.5rem;
-      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-      background: #fce4ec;
-      z-index: 1000;
-    }
-  </style>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>HAPPY BIRTHDAY💖</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap');
+
+  * {
+    box-sizing: border-box;
+  }
+  body {
+    margin: 0;
+    background: #fff0f6;
+    font-family: 'Poppins', sans-serif;
+    color: #c2185b;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow-x: hidden;
+    padding: 20px;
+  }
+  .slider {
+    position: relative;
+    background: #fff;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(194, 24, 91, 0.2);
+    width: 460px;
+    max-width: 95vw;
+    padding: 40px 30px 60px;
+    text-align: center;
+    min-height: 460px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .slide {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    color: #7b0a3e;
+    flex-grow: 1;
+    justify-content: center;
+    min-height: 100%;
+    text-align: center;
+  }
+  .slide.active {
+    display: flex;
+  }
+  h1, h2, p.message {
+    margin: 0 0 15px;
+    max-width: 380px;
+    padding: 0 15px;
+    background: #fff0f6;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(194,24,91,0.1);
+    text-align: center;
+  }
+  h1 {
+    font-weight: 700;
+    font-size: 2.8rem;
+    letter-spacing: 1.2px;
+    color: #c2185b;
+  }
+  h2 {
+    font-weight: 400;
+    font-size: 1.25rem;
+    font-style: italic;
+    color: #ad1457;
+  }
+  p.message {
+    font-weight: 300;
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: #7b0a3e;
+  }
+  .heart {
+    color: #e91e63;
+    font-size: 2.8rem;
+    animation: heartbeat 1.5s infinite;
+    margin-top: 15px;
+  }
+  @keyframes heartbeat {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.3); }
+  }
+
+  /* Kontainer Video */
+  .media-container {
+    max-width: 100%;
+    border-radius: 12px;
+    box-shadow: 0 6px 15px rgba(194, 24, 91, 0.25);
+    overflow: hidden;
+    margin: 15px 0 10px;
+    height: 260px;
+  }
+  .media-container video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 12px;
+    display: block;
+  }
+
+  /* Gaya LOVE */
+  .love-text {
+    font-weight: 700;
+    font-size: 4rem;
+    color: #e91e63;
+    letter-spacing: 8px;
+    font-family: 'Arial Black', Arial, sans-serif;
+    text-shadow:
+      1px 1px 0 #f8bbd0,
+      2px 2px 8px rgba(233, 30, 99, 0.7);
+    user-select: none;
+    margin-top: 20px;
+  }
+
+  /* Tombol Navigasi - diposisikan tengah bawah */
+  .nav-buttons {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 30px;
+    box-sizing: border-box;
+  }
+  button {
+    background: transparent;
+    border: 2px solid #c2185b;
+    color: #c2185b;
+    font-weight: 600;
+    padding: 8px 12px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 1.3rem;
+    line-height: 1;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    user-select: none;
+    width: 44px;
+    height: 44px;
+  }
+  button:hover,
+  button:focus {
+    background-color: #c2185b;
+    color: #fff0f6;
+    outline: none;
+  }
+  button:disabled {
+    border-color: #f8bbd0;
+    color: #f8bbd0;
+    cursor: default;
+    background: transparent;
+  }
+
+  /* Arrow icons */
+  .nav-arrow {
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    stroke: currentColor;
+    stroke-width: 2.5;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+
+  /* Posisi Youtube Music Player pojok bawah kanan */
+  .youtube-music {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    width: 250px;
+    height: 56px; /* standard height for youtube embed player */
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(194, 24, 91, 0.3);
+    z-index: 9999;
+  }
+  .youtube-music iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+  }
+</style>
 </head>
-<body class="bg-gradient-to-r from-pink-300 via-purple-300 to-indigo-400 min-h-screen flex items-center justify-center p-4">
-  <div class="max-w-xl w-full bg-pink-50 rounded-xl shadow-lg p-8 text-center">
-    <!-- Slide 1: Name -->
-    <div id="slide-1" class="slide active">
-      <h1 class="text-2xl font-bold text-pink-700 cursor-pointer hover:text-pink-900" id="name-click">🎂🎉HAPPY BIRTHDAY🎂🎉</h1>
-      <p class="mt-4 text-pink-600 hidden">Klik di nama untuk lanjut</p>
-    </div>
+<body>
+  <main class="slider" role="main" aria-label="Slideshow ucapan ulang tahun untuk Helena Halida Cristy">
 
-    <!-- Slide 2: Happy Birthday -->
-    <div id="slide-2" class="slide">
-      <h2 class="text-3xl font-extrabold text-pink-600 cursor-pointer hover:text-pink-900" id="happy-birthday-click">💕HELENA HALIDA CRISTY💕</h2>
-      <p class="mt-4 text-pink-600 hidden">Klik untuk slide selanjutnya</p>
-    </div>
+ <!-- Slide 1 -->
+    <section class="slide active" aria-hidden="false" aria-label="Slide 1: Selamat Ulang Tahun Helena Halida Cristy">
+      <h1>💖HAPPY BIRTHDAY💖 SAYAANGGGG🎂</h1>
+      <div class="heart" aria-hidden="true">❤️</div>
+    </section>
 
-    <!-- Slide 3: Ucapan Ula GAng Tahun -->
-    <div id="slide-3" class="slide">
-      <h2 class="text-3xl font-semibold text-pink-700 cursor-pointer hover:text-pink-900" id="ucapan-click">FROM GANTENGMU</h2>
-      <p id="sweet-message" class="mt-4 text-pink-600 hidden text-justify">
-        Selamat ulang tahun, Sayanggg💖😘🌹 Di hari yang sangat istimewa ini, aku berharap setiap momen dipenuhi dengan kebahagiaan yang tak terhingga, cinta yang tulus, dan tawa yang menghangatkan hati. Semoga setiap langkahmu dipenuhi dengan keberuntungan dan kesuksesan, dan semoga impian-impianmu yang paling indah menjadi kenyataan. Teruslah bersinar dan menjadi inspirasi bagi semua orang di sekitarmu. Hari ini adalah awal dari babak baru yang penuh harapan dan kebahagiaan. Nikmati setiap detiknya dengan penuh sukacita dan cinta. Kamu pantas mendapatkan yang terbaik di dunia ini!
+    <!-- Slide 2 -->
+    <section class="slide" aria-hidden="true" aria-label="Slide 2: Ucapan manis">
+      <h2>Umur baru dalam cerita indahmu ✨</h2>
+      <p class="message">
+        Selamat ulang tahun, cintaku.<br />
+        Di hari istimewamu ini, aku ingin kau tahu bahwa kehadiranmu dalam hidupku adalah anugerah terindah yang tak ternilai.<br />
+        Semoga setiap harapanmu dipeluk semesta, dan setiap langkahmu selalu dipenuhi cahaya dan kebahagiaan.<br />
+        Aku mencintaimu, hari ini, esok, dan selamanya.
       </p>
-      <p id="click-next" class="mt-4 text-pink-600 hidden cursor-pointer font-bold bg-pink-200 inline-block px-4 py-2 rounded">KLIK</p>
-    </div>
+      <div class="heart" aria-hidden="true">💖</div>
+    </section>
 
-    <!-- Slide 4: Memilih Kado -->
-    <div id="slide-4" class="slide">
-      <h2 class="text-3xl font-semibold text-pink-700 mb-6">Pilih Kado</h2>
-      <div class="grid grid-cols-2 gap-6">
-        <div class="gift-option p-4 border border-pink-300 rounded-lg shadow cursor-pointer" data-gift="Cincin">
-          <i class="fas fa-gem text-pink-400 text-5xl mb-2"></i>
-          <p class="font-medium text-pink-700">Cincin</p>
-        </div>
-        <div class="gift-option p-4 border border-pink-300 rounded-lg shadow cursor-pointer" data-gift="Alat Kecantikan">
-          <i class="fas fa-magic text-pink-500 text-5xl mb-2"></i>
-          <p class="font-medium text-pink-700">Alat Kecantikan</p>
-        </div>
-        <div class="gift-option p-4 border border-pink-300 rounded-lg shadow cursor-pointer" data-gift="Bunga">
-          <i class="fas fa-spa text-pink-400 text-5xl mb-2"></i>
-          <p class="font-medium text-pink-700">Bunga</p>
-        </div>
-        <div class="gift-option p-4 border border-pink-300 rounded-lg shadow cursor-pointer" data-gift="Kue">
-          <i class="fas fa-birthday-cake text-pink-600 text-5xl mb-2"></i>
-          <p class="font-medium text-pink-700">Kue</p>
-        </div>
+    <!-- Slide 3 Video Kebersamaan -->
+    <section class="slide" aria-hidden="true" aria-label="Slide 3: Video kebersamaan">
+      <h2>Kenangan Bersama</h2>
+      <div class="media-container" aria-label="Video kebersamaan Helena dan teman-teman">
+        <video controls preload="metadata" tabindex="0">
+          <source src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.webm" type="video/webm" />
+          <source src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4" type="video/mp4" />
+          Video tidak didukung oleh browser ini.
+        </video>
       </div>
-      <p class="mt-6 text-pink-600 font-bold">Klik salah satu kado untuk melanjutkan</p>
-    </div>
+      <p class="message">Momen indah yang selalu dikenang bersama orang-orang tercinta.</p>
+      <div class="heart" aria-hidden="true">🎬</div>
+    </section>
 
-    <!-- Slide 5: Ungkapan untuk Dia -->
-    <div id="slide-5" class="slide">
-      <h2 class="text-3xl font-semibold text-pink-700 mb-4">Ungkapan untuk Helena Halida Cristy</h2>
-      <p id="gift-message" class="text-pink-700 text-lg"></p>
-      <p id="click-next-gift" class="mt-4 text-pink-600 cursor-pointer font-bold bg-pink-200 inline-block px-4 py-2 rounded hidden">KLIK</p>
-    </div>
-
-    <!-- Slide 6: Ucapan Terima Kasih -->
-    <div id="slide-6" class="slide">
-      <h2 class="text-3xl font-semibold text-pink-700 mb-4">Ucapan Terima Kasih</h2>
-      <p id="thank-you-message" class="mt-6 text-pink-600 text-justify">
-        Terima kasih sudah menjadi pelengkap dalam hidupku. Kehadiranmu membawa warna, kebahagiaan, dan cinta yang tak tergantikan. Aku bersyukur setiap hari karena memiliki kamu di sisiku. Semoga kita selalu bersama melewati setiap suka dan duka, dan cinta kita terus tumbuh semakin indah. Kamu adalah anugerah terindah yang pernah aku miliki.
+    <!-- Slide 4 -->
+    <section class="slide" aria-hidden="true" aria-label="Slide 4: Doa untuk umur ke-21">
+      <h2>Doa Ulang Tahun ke-21</h2>
+      <p class="message" style="font-style: italic; color: #9c2550;">
+        Semoga perjalananmu di usia yang indah ini membawa<br />
+        berkah yang tak terhingga, kebijaksanaan, dan kekuatan.<br />
+        Semoga kamu berkembang dalam kesehatan, kebahagiaan, dan cinta<br />
+        dan semoga impianmu mekar setiap harinya.<br />
+        Selamat ulang tahun yang ke-21, Sayanggg 🎉
       </p>
-      <button id="restart-btn" class="mt-8 px-6 py-2 bg-pink-600 text-white rounded hover:bg-pink-800 transition">Mulai Lagi</button>
-    </div>
+      <div class="heart" aria-hidden="true">🙏</div>
+    </section>
+
+    <!-- Slide 5 -->
+    <section class="slide" aria-hidden="true" aria-label="Slide 5: Tulisan LOVE berwarna pink">
+      <h2>Dear Love</h2>
+      <div class="love-text" aria-hidden="true">I LOVE YOU SAYANGG</div>
+      <p class="message">Selamanya dan selalu. Kamu bukan hanya cinta, tapi rumah bagi hatiku 💕</p>
+    </section>
+
+    <!-- Tombol Navigasi -->
+    <nav class="nav-buttons" aria-label="Navigasi slide">
+      <button id="prevBtn" type="button" aria-label="Slide sebelumnya">
+        <svg class="nav-arrow" viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false">
+          <polyline points="15 18 9 12 15 6" />
+        </svg>
+      </button>
+      <button id="nextBtn" type="button" aria-label="Slide berikutnya">
+        <svg class="nav-arrow" viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false">
+          <polyline points="9 18 15 12 9 6" />
+        </svg>
+      </button>
+    </nav>
+  </main>
+
+  <!-- Youtube Music Player di pojok bawah kanan -->
+  <div class="youtube-music" aria-label="Musik ulang tahun dari YouTube">
+    <iframe 
+      src="https://www.youtube.com/embed/fTrqoVSrw1Y?autoplay=1&mute=0&loop=1&playlist=fTrqoVSrw1Y" 
+      title="Musik Ulang Tahun" 
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+      allowfullscreen
+      ></iframe>
   </div>
 
-  <!-- YouTube iframe for song about kasih sayang -->
-  <iframe id="youtube-audio" src="https://www.youtube.com/embed/Wx5mMxUPEd8?autoplay=1&loop=1&playlist=Wx5mMxUPEd8&controls=1&mute=1" allow="autoplay" allowfullscreen class="fixed bottom-4 right-4 w-72 h-16 rounded shadow-lg bg-pink-100 border-none"></iframe>
-
   <script>
-    const slides = document.querySelectorAll('.slide');
-    let currentSlide = 1;
+    (function(){
+      const slides = document.querySelectorAll('.slide');
+      const prevBtn = document.getElementById('prevBtn');
+      const nextBtn = document.getElementById('nextBtn');
+      let current = 0;
 
-    function showSlide(n) {
-      slides.forEach((slide, index) => {
-        slide.classList.toggle('active', index === n - 1);
-      });
-      currentSlide = n;
-    }
+      function showSlide(index) {
+        slides.forEach((slide, i) => {
+          const isActive = i === index;
+          slide.classList.toggle('active', isActive);
+          slide.setAttribute('aria-hidden', isActive ? 'false' : 'true');
+        });
+        prevBtn.disabled = index === 0;
+        nextBtn.disabled = index === slides.length - 1;
+      }
 
-    document.getElementById('name-click').addEventListener('click', () => {
-      showSlide(2);
-    });
-
-    document.getElementById('happy-birthday-click').addEventListener('click', () => {
-      showSlide(3);
-    });
-
-    document.getElementById('ucapan-click').addEventListener('click', () => {
-      // Show sweet message first
-      const sweetMessage = document.getElementById('sweet-message');
-      const clickNext = document.getElementById('click-next');
-      sweetMessage.classList.remove('hidden');
-      clickNext.classList.remove('hidden');
-      // Disable further clicks on ucapan-click to prevent skipping
-      document.getElementById('ucapan-click').style.pointerEvents = 'none';
-    });
-
-    document.getElementById('click-next').addEventListener('click', () => {
-      showSlide(4);
-    });
-
-    const giftOptions = document.querySelectorAll('.gift-option');
-    const giftMessage = document.getElementById('gift-message');
-    const clickNextGift = document.getElementById('click-next-gift');
-
-    giftOptions.forEach(option => {
-      option.addEventListener('click', () => {
-        const gift = option.getAttribute('data-gift');
-        let message = '';
-        switch (gift) {
-          case 'Cincin':
-            message = 'Semoga cincin ini membawa kebahagiaan dan keberuntungan untukmu!';
-            break;
-          case 'Alat Kecantikan':
-            message = 'Semoga alat kecantikan ini membuatmu semakin bersinar dan percaya diri!';
-            break;
-          case 'Bunga':
-            message = 'Semoga bunga ini mewakili keindahan dan kehangatan hatimu!';
-            break;
-          case 'Kue':
-            message = 'Semoga kue ini manis seperti hari ulang tahunmu!';
-            break;
-          default:
-            message = 'Selamat ulang tahun, Helena Halida Cristy!';
+      prevBtn.addEventListener('click', () => {
+        if(current > 0) {
+          current--;
+          showSlide(current);
         }
-        giftMessage.textContent = message;
-        clickNextGift.classList.remove('hidden');
-        showSlide(5);
       });
-    });
+      nextBtn.addEventListener('click', () => {
+        if(current < slides.length - 1) {
+          current++;
+          showSlide(current);
+        }
+      });
 
-    clickNextGift.addEventListener('click', () => {
-      showSlide(6);
-    });
-
-    document.getElementById('restart-btn').addEventListener('click', () => {
-      showSlide(1);
-    });
+      // Initialize slideshow
+      showSlide(current);
+    })();
   </script>
 </body>
 </html>
